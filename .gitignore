@@ -1,0 +1,9 @@
+# Build directory
+/build
+/coverage
+
+# Dependencies
+/node_modules
+
+# Local environment variables
+.env
