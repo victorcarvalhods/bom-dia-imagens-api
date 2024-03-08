@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "test": "vitest --dir src/services"
+    "test": "vitest --dir src/services",
+    "pretest:e2e": "cd prisma/vitest-environment-prisma && npm link && cd ../../ && npm link vitest-environment-prisma",
+    "test:e2e": "vitest --dir src/http"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.25",
+    "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "eslint": "^8.57.0",
