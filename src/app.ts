@@ -1,7 +1,12 @@
-import fastify from "fastify";
+import fastifyJwt from '@fastify/jwt'
+import fastify from 'fastify'
+import { env } from './env'
+import { usersRoutes } from './http/controllers/users/routes'
 
-export const app = fastify();
+export const app = fastify()
 
-app.get("/", async (request, reply) => {
-  return reply.send({ hello: "world" });
-});
+app.register(fastifyJwt, {
+	secret: env.JWT_SECRET,
+})
+
+app.register(usersRoutes)
