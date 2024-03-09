@@ -37,7 +37,7 @@ export async function postImage(req: FastifyRequest, reply: FastifyReply) {
 
 async function uploadImageToAWS(userID: string, image: MultipartFile) {
 
-	const originalFileName = (await image).filename
+	const originalFileName = image.filename
 
 	const fileExtension = path.extname(originalFileName).replace('.', '')
 
@@ -50,7 +50,7 @@ async function uploadImageToAWS(userID: string, image: MultipartFile) {
 
 	const awsS3Client = new AWSS3Client()
 
-	const imageURL = await awsS3Client.upload(await (await image).toBuffer(), newFileName, fileExtension)
+	const imageURL = await awsS3Client.upload(await image.toBuffer(), newFileName, fileExtension)
     
 	return imageURL
 
