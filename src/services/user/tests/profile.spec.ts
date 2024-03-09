@@ -2,7 +2,7 @@ import {it, describe, beforeEach, expect} from 'vitest'
 import { InMemoryUserRepository } from '@/repositories/in-memory/in-memory-users-repository'
 import { hash } from 'bcryptjs'
 import { UserProfileUseCase } from '../profile'
-import { ResourceNotFound } from '@/services/erros/ResourceNotFound'
+import { ResourceNotFound } from '@/services/global-erros/ResourceNotFound'
 
 let userRepository: InMemoryUserRepository
 let sut: UserProfileUseCase

@@ -1,5 +1,5 @@
 import { UsersRepository } from '@/repositories/users-repositories'
-import { ResourceNotFound } from '../erros/ResourceNotFound'
+import { ResourceNotFound } from '../global-erros/ResourceNotFound'
 import { User } from '@prisma/client'
 
 interface UserProfileUseCaseRequest{
