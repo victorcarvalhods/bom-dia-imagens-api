@@ -1,4 +1,4 @@
-import { makeRegisterUseCase } from '@/services/factories/make-register-use-case'
+import { makeRegisterUseCase } from '@/services/user/factories/make-register-use-case'
 import { UserAlreadyExistsError } from '@/services/user/errors/UserAlreadyExistsError'
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'

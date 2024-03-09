@@ -1,4 +1,4 @@
-import { makeProfileUseCase } from '@/services/factories/make-profile-use-case'
+import { makeProfileUseCase } from '@/services/user/factories/make-profile-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 
 
