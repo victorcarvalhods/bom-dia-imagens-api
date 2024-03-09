@@ -3,18 +3,16 @@ import { z } from 'zod'
 import { makeGetImagesByUserIdUseCase } from '@/services/image/factories/make-get-images-by-userId'
 
 export async function getImagesByUserId(req: FastifyRequest, reply: FastifyReply) {
-	const getImagesByUserIdQuerySchema = z.object({
-		page: z.coerce.number().default(1),
+	const getImagesByUserIdParamsSchema = z.object({
+		userId: z.coerce.string(),
 	})
 
-	const { page } = getImagesByUserIdQuerySchema.parse(req.query)
-
-	const userId = req.user.sub
+	const {userId} = getImagesByUserIdParamsSchema.parse(req.params)
 
 	try {
 		const getImagesByUserId =  makeGetImagesByUserIdUseCase()
 
-		const { images } = await getImagesByUserId.execute({page, userId})
+		const { images } = await getImagesByUserId.execute({userId})
 
 		return reply.status(200).send(images)
 	} catch (error) {

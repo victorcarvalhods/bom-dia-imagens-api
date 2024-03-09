@@ -22,9 +22,7 @@ describe('Get Images', () => {
 			url: 'image-url2'
 		})
 
-		const {images} = await sut.execute({
-			page: 1
-		})
+		const {images} = await sut.execute()
 
 		expect(images).toHaveLength(2)
 

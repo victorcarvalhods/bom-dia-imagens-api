@@ -11,22 +11,18 @@ export class PrismaImageRepository implements ImagesRepository{
 		return image
 	}
 
-	async getImagesByUserId(userId: string, page: number): Promise<Image[]> {
+	async getImagesByUserId(userId: string): Promise<Image[]> {
 		const images = await prisma.image.findMany({
 			where: {
 				userId
 			},
-			take: 10,
-			skip: page * 10
 		})
 
 		return images
 	}
 
-	async getImages(page: number): Promise<Image[]> {
+	async getImages(): Promise<Image[]> {
 		const images = await prisma.image.findMany({
-			take: 10,
-			skip: page * 10
 		})
 
 		return images

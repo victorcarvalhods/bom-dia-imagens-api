@@ -5,12 +5,12 @@ import { ImagesRepository } from '../images-repositories'
 export class InMemoryImageRepository implements ImagesRepository{
 	public items: Image[] = []
 
-	async getImagesByUserId(userId: string, page:number): Promise<Image[]> {
-		return this.items.filter((image) => image.userId === userId).slice((page - 1) * 10, page * 10)
+	async getImagesByUserId(userId: string): Promise<Image[]> {
+		return this.items.filter((image) => image.userId === userId)
 	}
 
-	async getImages(page: number): Promise<Image[]> {
-		return this.items.slice((page - 1) * 10, page * 10)
+	async getImages(): Promise<Image[]> {
+		return this.items
 	}
 
 	async postImage(data: Prisma.ImageUncheckedCreateInput): Promise<Image>{

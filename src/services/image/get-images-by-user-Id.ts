@@ -3,7 +3,6 @@ import { Image } from '@prisma/client'
 
 interface GetImagesByUserIdUseCaseRequest{
     userId: string
-    page: number
 }
 
 interface GetImagesByUserIdUseCaseReply{
@@ -15,9 +14,8 @@ export class GetImagesByUserIdUseCase {
 
 	async execute({
 		userId,
-		page
 	}: GetImagesByUserIdUseCaseRequest): Promise<GetImagesByUserIdUseCaseReply> {
-		const images = await this.imageRepository.getImagesByUserId(userId, page)
+		const images = await this.imageRepository.getImagesByUserId(userId)
 
 		return {
 			images,

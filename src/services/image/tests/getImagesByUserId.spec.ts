@@ -24,7 +24,6 @@ describe('Get Images by user id', () => {
 
 		const {images} = await sut.execute({
 			userId: 'user-id',
-			page: 1
 		})
 
 		expect(images).toHaveLength(2)

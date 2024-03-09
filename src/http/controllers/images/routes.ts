@@ -7,11 +7,10 @@ import multipart from '@fastify/multipart'
 
 export async function imagesRoutes (app: FastifyInstance){
 	app.get('/images', getImages)
-
+	app.get('/users/:userId/images', getImagesByUserId)
 	
 	//user should be authenticated to use the follow routes
 	app.addHook('onRequest', verifyJWT)
-	app.get('/users/images', getImagesByUserId)
 
 	app.register(multipart)//file handler
 	app.post('/users/images', postImage)

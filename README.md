@@ -6,11 +6,11 @@
 - [x] Deve ser possível que o usuário se cadastre
 - [x] O usuário deve poder se autenticar
 - [x] Deve ser possível obter o perfil de um usuário logado
-- [ ] O usuário deve poder enviar uma imagem
-- [ ] O usuário deve poder ver todas as fotos que enviou
-- [ ] Deve ser possível que o usuário apague uma foto que enviou
-- [ ] Deve ser possível buscar uma imagem
-- [ ] Usuários não cadastrados devem conseguir ver imagens
+- [x] O usuário deve poder enviar uma imagem
+- [x] O usuário deve poder ver todas as fotos que enviou
+- [x] Deve ser possível que o usuário apague uma foto que enviou
+- [x] Deve ser possível buscar uma imagem
+- [x] Usuários não cadastrados devem conseguir ver imagens
 
 # RN:
 
