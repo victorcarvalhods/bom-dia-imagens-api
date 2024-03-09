@@ -1,6 +1,6 @@
 import { InMemoryImageRepository } from '@/repositories/in-memory/in-memory-images-repository'
 import {it, describe, beforeEach, expect} from 'vitest'
-import { GetImagesByUserIdUseCase } from '../getImagesByUserId'
+import { GetImagesByUserIdUseCase } from '../get-images-by-user-Id'
 
 let imageRepository: InMemoryImageRepository
 let sut: GetImagesByUserIdUseCase
