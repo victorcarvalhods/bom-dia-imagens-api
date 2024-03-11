@@ -10,8 +10,9 @@ export async function imagesRoutes (app: FastifyInstance){
 	app.get('/users/:userId/images', getImagesByUserId)
     
 	app.register(multipart) //file handler
-
 	//user should be authenticated to use the follow routes
 
-	app.post('/users/images', { onRequest: verifyJWT }, postImage)
+	app.post('/users/images', { 
+		onRequest: verifyJWT,
+	}, postImage)
 }

@@ -1,27 +1,71 @@
-# Bom dia Imagens especificações:
+# Bom Dia Imagens
+
+This is a project for users to upload and view images. Users can register, authenticate, upload images, view their uploaded images, delete their images, and search for images. Non-registered users can also view images.
+
+## Technology Stack
+
+- **Language**: TypeScript
+- **Backend**: Node.js
+- **Frameworks**: Fastify, PrismaORM, Vitest
+- **Database**: PostgreSQL
+- **Authentication**: JSON Web Tokens (JWT)
+- **Image Storage**: Amazon S3
+- **Testing**: Vitest
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/victorcarvalhods/bom-dia-imagens-api.git
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set-up DB container:
+
+```bash
+docker-compose up
+```
+
+4. Start the Server: 
+
+```bash
+npm start
+```
+
+## Routes
+
+- `POST /users`: Register a new user.
+- `POST /auth`: Authenticate a user and return his Auth Token.
+- `GET /profile`: Get the profile of the authenticated user.
+- `POST /users/images`: Upload an image (authenticated users only).
+- `GET /users/:userId/images`: Get all images uploaded by a user (authenticated users only).
+- `GET /images`: Search for images.
 
 
-# RF:
+## Specifications
 
-- [x] Deve ser possível que o usuário se cadastre
-- [x] O usuário deve poder se autenticar
-- [x] Deve ser possível obter o perfil de um usuário logado
-- [x] O usuário deve poder enviar uma imagem
-- [x] O usuário deve poder ver todas as fotos que enviou
-- [x] Deve ser possível que o usuário apague uma foto que enviou
-- [x] Deve ser possível buscar uma imagem
-- [x] Usuários não cadastrados devem conseguir ver imagens
+### Functional Requirements:
 
-# RN:
+- [x] Users should be able to register.
+- [x] Users should be able to authenticate.
+- [x] Authenticated users should be able to view their profile.
+- [x] Users should be able to upload an image.
+- [x] Users should be able to view all the images they have uploaded.
+- [x] Users should be able to delete an image they have uploaded.
+- [x] Users should be able to search for images.
+- [x] Non-registered users should be able to view images.
 
-- [x] O usuário não deve poder se cadastrar com um e-mail duplicado
-- [ ] O usuário não deve poder enviar aquivos que não sejam fotos
-- [ ] O usuário não pode enviar mais que uma foto a cada 5 minutos
+### Non-Functional Requirements:
 
-
-# RNF:
-
-- [ ] A senha do usuário deve ser criptografada
-- [ ] Os dados da aplicação precisam estar persistidos em um SGBD Postgres
-- [ ] Todas listas de dados precisam estar paginadas com 20 itens por página
-- [x] O usuário deve ser identificado por um JWT (JSON Web Token)
+- [x] User registration should not allow duplicate emails.
+- [x] Users should only be able to upload image files.
+- [x] Users should be limited to uploading 10 images every 5 minutes.
+- [x] User passwords should be encrypted.
+- [x] Application data should be persisted in a PostgreSQL database.
+- [x] Users should be authenticated using JSON Web Tokens (JWT).
