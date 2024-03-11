@@ -4,7 +4,7 @@ import { env } from '@/env'
 export class AWSS3Client{
 	private s3Client: S3
 	private bucketName: string
-	private bucketPrefix: string
+	private bucketPrefix: string //reference to the folder in the bucket
 	private bucketURL: string
 
 	constructor(){
@@ -34,5 +34,14 @@ export class AWSS3Client{
 
 		return this.bucketURL + this.bucketPrefix + filename
         
+	}
+
+	async delete(filename: string){
+		const params = {
+			Bucket: this.bucketName,
+			Key: `${this.bucketPrefix}${filename}`,
+		}
+
+		await this.s3Client.deleteObject(params)
 	}
 }
