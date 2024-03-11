@@ -35,7 +35,7 @@ docker-compose up
 4. Start the Server: 
 
 ```bash
-npm start
+npm run dev
 ```
 
 ## Routes
