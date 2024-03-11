@@ -1,6 +1,6 @@
 # Bom Dia Imagens
 
-This is a project for users to upload and view images. Users can register, authenticate, upload images, view their uploaded images, delete their images, and search for images. Non-registered users can also view images.
+This is a project for users to upload and view images. Users can register, authenticate, upload images, view their uploaded images, and search for images. Non-registered users can also view images.
 
 ## Technology Stack
 
